@@ -230,3 +230,15 @@ bindsym $mod+Shift+x exec i3lock --color=000000
 #bindsym XF86AudioRaiseVolume exec pactl set-sink-volume 0 +2% #increase sound volume
 #bindsym XF86AudioLowerVolume exec pactl set-sink-volume 0 -2% #decrease sound volume
 bindsym XF86AudioMute exec pactl set-sink-mute 0 toggle #mute sound
+
+#-------------------------------
+# Run these commands on startup
+#-------------------------------
+
+# Use "exec" to run only on login
+# Use "exec_always" to run on restarting i3
+
+# Background processes
+exec dropbox start
+exec redshift-gtk -c .config/redshift.conf
+exec_always feh --bg-scale http://images6.fanpop.com/image/photos/36800000/Beautiful-Landscapes-image-beautiful-landscapes-36803145-1920-1080.jpg
