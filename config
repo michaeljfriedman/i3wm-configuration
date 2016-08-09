@@ -218,7 +218,15 @@ bar {
 }
 
 
-
+#----------------------
 # Custom key bindings
+#----------------------
+
+# Screen lock and suspend
 bindsym $mod+Shift+s exec i3lock --color=000000 && sudo pm-suspend
 bindsym $mod+Shift+x exec i3lock --color=000000
+
+# Fix volume buttons
+#bindsym XF86AudioRaiseVolume exec pactl set-sink-volume 0 +2% #increase sound volume
+#bindsym XF86AudioLowerVolume exec pactl set-sink-volume 0 -2% #decrease sound volume
+bindsym XF86AudioMute exec pactl set-sink-mute 0 toggle #mute sound
