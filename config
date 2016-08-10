@@ -178,6 +178,9 @@ bindsym $alt+Shift+8 move container to workspace $WORKSPACE18
 bindsym $alt+Shift+9 move container to workspace $WORKSPACE19
 bindsym $alt+Shift+0 move container to workspace $WORKSPACE20
 
+# Associate windows with workspaces
+
+
 # reload the configuration file
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
@@ -227,9 +230,9 @@ bindsym $mod+Shift+s exec i3lock --color=000000 && sudo pm-suspend
 bindsym $mod+Shift+x exec i3lock --color=000000
 
 # Fix volume buttons
-#bindsym XF86AudioRaiseVolume exec pactl set-sink-volume 0 +2% #increase sound volume
-#bindsym XF86AudioLowerVolume exec pactl set-sink-volume 0 -2% #decrease sound volume
-bindsym XF86AudioMute exec pactl set-sink-mute 0 toggle #mute sound
+#bindsym XF86AudioRaiseVolume exec pactl set-sink-volume 0 +2%
+#bindsym XF86AudioLowerVolume exec pactl set-sink-volume 0 -2%
+bindsym XF86AudioMute exec pactl set-sink-mute 0 toggle
 
 #-------------------------------
 # Run these commands on startup
