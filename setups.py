@@ -53,8 +53,11 @@ def create_setups():
 		"Sublime"
 	]
 
+	# To run i3 commands (for instance, to split horizontally/vertically), prefix
+	# the command with "i3-msg" followed by the i3 command
+	# 	e.g. To split horizontally: "i3-msg split h"
 	cmds = [
-		["subl -n", "gnome-terminal", "nautilus"]
+		["subl -n", "gnome-terminal", "i3-msg split v", "gnome-terminal"]
 	]
 
 	return Setups(names, cmds)
