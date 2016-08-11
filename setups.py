@@ -41,13 +41,11 @@ class Setups(object):
 			for cmd in setup_cmds:
 				self._cmds[i].append(cmd)
 
-	@property
 	def names(self):
 		return self._names
 	
-	@property
-	def cmds(self):
-		return self._cmds
+	def cmds(self, i):
+		return self._cmds[i]
 
 
 def create_setups():
