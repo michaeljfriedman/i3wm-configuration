@@ -88,51 +88,26 @@ bindsym $mod+a focus parent
 #bindsym $mod+d focus child
 
 # Workspace declarations:
-# Section I: Home
-# 	Browsing, music, recreation
-	set $WORKSPACE1 "1: Home"
-
-# Section II: Work
-# 	Problem sets
-	set $WORKSPACE2 "2: Psets"
-# 	Reviewing notes/readings
-	set $WORKSPACE3 "3: Study"
-# 	Papers/written work
-	set $WORKSPACE4 "4: Writing"
-# 	Practice exams
-	set $WORKSPACE5 "5: Exams"
-
-# Section III: Code
-# 	Projects using ST editor
-	set $WORKSPACE6 "6: Sublime"
-# 	Developing Android apps
-	set $WORKSPACE7 "7: Android Dev"
-# 	LaTeX docs
-	set $WORKSPACE8 "8: LaTeX"
-
-# Section IV: Music
-# 	Recording & editing music
-	set $WORKSPACE9 "9: Music Prod"
-# 	Reading music, practicing w/ videos
-	set $WORKSPACE10 "10: Piano"
-# 	Composing/arranging music
-	set $WORKSPACE11 "11: Composing"
-# 	Any music playing
-	set $WORKSPACE12 "12: Music Player"
-
-# Section V: Misc.
-# 	Any messaging services
-	set $WORKSPACE13 "13: Messaging"
-# 	Video gaming
-	set $WORKSPACE14 "14: Games"
-
-# Section VI: Un-purposed
-set $WORKSPACE15 15
-set $WORKSPACE16 16
-set $WORKSPACE17 17
-set $WORKSPACE18 18
-set $WORKSPACE19 19
-set $WORKSPACE20 20
+set $WORKSPACE1 "1: Home"
+set $WORKSPACE2 "2: Psets"
+set $WORKSPACE3 "3: Study"
+set $WORKSPACE4 "4: Writing"
+set $WORKSPACE5 "5: Exams"
+set $WORKSPACE6 "6: Sublime"
+set $WORKSPACE7 "7: Android Dev"
+set $WORKSPACE8 "8: LaTeX"
+set $WORKSPACE9 "9: Music Prod"
+set $WORKSPACE10 "10: Piano"
+set $WORKSPACE11 "11: Composing"
+set $WORKSPACE12 "12: Music Player"
+set $WORKSPACE13 "13: Messaging"
+set $WORKSPACE14 "14: Games"
+set $WORKSPACE15 "15"
+set $WORKSPACE16 "16"
+set $WORKSPACE17 "17"
+set $WORKSPACE18 "18"
+set $WORKSPACE19 "19"
+set $WORKSPACE20 "20"
 
 # switch to workspace
 bindsym $mod+1 workspace $WORKSPACE1
@@ -206,7 +181,7 @@ bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'python ~/.config/i3/resetworkspaces.py && i3-msg exit'"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {

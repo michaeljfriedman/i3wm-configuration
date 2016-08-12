@@ -7,10 +7,8 @@ This script loads my setups defined in setups.py, prompts the user to select
 one, and then applies that setup to the workspace number passed as argument.
 '''
 from sys 					import argv, stdin
-from shutil 			import copy2			# copy2 preserves all file metadata as well
 from subprocess32 import call
 from i3 					import I3
-import os.path
 import setups as s
 
 # Runs terminal command and then wastes time
@@ -18,15 +16,7 @@ def run(cmd):
 	call(cmd)
 	I3.waste_some_time()
 
-# Copies the initial config file to config.on-startup so it can be restored when
-# the user logs out
-def copy_config():
-	copy2(I3.CONFIG_FILE, I3.CONFIG_FILE_BACKUP)
-
-# Renames the workspace of the provided number w to the given name. Assumes the
-# convention that workspace names are defined in variables of the form:
-# $WORKSPACE#
-# Returns the full name of the workspace (as named in the i3 config file)
+# Renames the workspace of the provided number w to the given name
 def rename_workspace(w, new_name):
 	workspace_declaration = I3.workspace_declaration(w)
 	replacement 					= "%s \"%d: %s\"" % (workspace_declaration, w, new_name)
@@ -77,8 +67,6 @@ while selection not in range(1, len(setups.names()) + 1):
 selection_index = selection - 1
 
 # Rename the workspace and restart i3 to apply that name
-if not os.path.isfile(I3.CONFIG_FILE_BACKUP):
-	copy_config()
 rename_workspace(workspace_num, setups.names()[selection_index])
 I3.run("restart")
 I3.run("workspace " + str(workspace_num) + ": " + setups.names()[selection_index])

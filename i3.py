@@ -11,16 +11,48 @@ from subprocess32 import call
 class I3(object):
 
 	# Constants
-	I3_DIRECTORY 					= "/home/michael/.config/i3/"
-	CONFIG_FILENAME 			= "config"
-	CONFIG_FILE 					= I3_DIRECTORY + CONFIG_FILENAME
-	CONFIG_FILE_BACKUP 		= CONFIG_FILE + ".on-startup"
-	WORKSPACE_DECLARATION = "set $WORKSPACE"
+	I3_DIRECTORY 						= "/home/michael/.config/i3/"
+	CONFIG_FILENAME 				= "config"
+	CONFIG_FILE 						= I3_DIRECTORY + CONFIG_FILENAME
+	CONFIG_FILE_BACKUP 			= CONFIG_FILE + ".on-startup"
+	DEFAULT_WORKSPACE_NAMES = [
+		# Home
+		"1: Home",						# Browsing, music, recreation
+		
+		# School
+		"2: Psets",						# Psets
+		"3: Study",						# Reviewing notes/readings
+		"4: Writing",					# Papers/written work
+		"5: Exams",						# Practice exams
+		
+		# Code
+		"6: Sublime",					# Projects using ST editor
+		"7: Android Dev",			# Developing Android apps
+		"8: LaTeX",						# LaTeX docs
+
+		# Music
+		"9: Music Prod",			# Recording & editing music
+		"10: Piano",					# Reading music, practicing w/ videos
+		"11: Composing",			# Composing/arranging music
+		"12: Music Player",		# Any music playing
+
+		# Misc.
+		"13: Messaging",			# Any messaging services
+		"14: Games",					# Gaming
+
+		# Un-purposed
+		"15",
+		"16",
+		"17",
+		"18",
+		"19",
+		"20"
+	]
 
 	# Returns the workspace declaration line for workspace i
 	@staticmethod
 	def workspace_declaration(i):
-		return I3.WORKSPACE_DECLARATION + str(i)
+		return "set $WORKSPACE" + str(i)
 
 	# Does a meaningless process to cause a slight delay
 	@staticmethod
