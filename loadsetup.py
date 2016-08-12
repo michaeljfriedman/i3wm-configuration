@@ -68,7 +68,7 @@ selection_index = selection - 1
 
 # Rename the workspace and restart i3 to apply that name
 rename_workspace(workspace_num, setups.names()[selection_index])
-I3.run("restart")
+I3.run("reload")
 I3.run("workspace " + str(workspace_num) + ": " + setups.names()[selection_index])
 
 # Run the commands for the selected setup
