@@ -23,23 +23,6 @@ def run(cmd):
 	call(cmd)
 	waste_some_time()
 
-# Returns the index of the string s in the array a
-def index_of(item, a):
-	for i in range(0, len(a)):
-		if a[i] == item:
-			return i
-	return -1
-
-# Returns the provided string with the ending newline character stripped off
-def with_newline_stripped(s):
-	NEWLINE = "\n"
-	N = len(s)
-	if N == 0:
-		return s
-	elif NEWLINE == s[N - 1]:
-		return s[0:N - 1]
-	return s
-
 # Copies the initial config file to config.on-startup so it can be restored when
 # the user logs out
 def copy_config():
@@ -86,15 +69,18 @@ prompt_message = "Select a setup from the following options:\n"
 for i in range(0, len(setups.names())):
 	prompt_message += str(i+1) + ": " + setups.names()[i] + "\n"
 print prompt_message
-selection = ""
+selection = 0
 num_attempts = 1
 MAX_ATTEMPTS = 5
-while with_newline_stripped(selection) not in setups.names():
-	selection = stdin.readline()
+while selection not in range(1, len(setups.names()) + 1):
+	try:
+		selection = int(stdin.readline())
+	except ValueError:
+		pass
 	num_attempts += 1
 	if num_attempts > MAX_ATTEMPTS:
 		exit("Maxed out your " + str(MAX_ATTEMPTS) + " attempts")
-selection_index = index_of(selection, setups.names())
+selection_index = selection - 1
 
 # Rename the workspace and restart i3 to apply that name
 if not os.path.isfile(CONFIG_FILE_BACKUP):
