@@ -62,10 +62,21 @@ class I3(object):
 
 	# Runs an i3 command
 	@staticmethod
-	def run(cmd):
+	def msg(cmd):
 		i3_command_runner = "i3-msg"
 		parts = [i3_command_runner]
 		for part in cmd.split(" "):
 			parts.append(part)
 		call(parts)
 		I3.waste_some_time()
+
+	# Shows an error bar at the top with the given message and (optionally)
+	# a button with a corresponding shell command
+	@staticmethod
+	def nagbar(message, button_label="", button_cmd=""):
+		i3_nagbar_runner = "i3-nagbar"
+		parts = [i3_nagbar_runner, "-m", message]
+		if button_label != "" and button_cmd != "":
+			button_parts = ["-b", button_label, button_cmd]
+			parts = parts + button_parts
+		call(parts)

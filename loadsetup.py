@@ -57,19 +57,20 @@ selection = 0
 num_attempts = 1
 MAX_ATTEMPTS = 5
 while selection not in range(1, len(setups.names()) + 1):
+	if num_attempts > MAX_ATTEMPTS:
+		I3.nagbar("Maxed out your " + str(MAX_ATTEMPTS) + " attempts")
+		exit()
 	try:
 		selection = int(stdin.readline())
 	except ValueError:
 		pass
 	num_attempts += 1
-	if num_attempts > MAX_ATTEMPTS:
-		exit("Maxed out your " + str(MAX_ATTEMPTS) + " attempts")
 selection_index = selection - 1
 
 # Rename the workspace and restart i3 to apply that name
 rename_workspace(workspace_num, setups.names()[selection_index])
-I3.run("reload")
-I3.run("workspace " + str(workspace_num) + ": " + setups.names()[selection_index])
+I3.msg("reload")
+I3.msg("workspace " + str(workspace_num) + ": " + setups.names()[selection_index])
 
 # Run the commands for the selected setup
 for cmd in setups.cmds(selection_index):
