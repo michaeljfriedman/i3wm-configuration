@@ -2,6 +2,9 @@
 Author: Michael J Friedman
 Created: 08/10/2016
 
+Deprecated: 08/12/2016
+	Replaced by i3.py, which contains a static class for these methods.
+
 Description:
 This module allows a client to pass in any i3 command and execute it.
 '''
