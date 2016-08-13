@@ -154,26 +154,26 @@ bindsym $alt+Shift+9 move container to workspace $WORKSPACE19
 bindsym $alt+Shift+0 move container to workspace $WORKSPACE20
 
 # Load a setup on a workspace
-bindsym $mod+Control+1 exec gnome-terminal -x python ~/.config/i3/loadsetup.py 1
-bindsym $mod+Control+2 exec gnome-terminal -x python ~/.config/i3/loadsetup.py 2
-bindsym $mod+Control+3 exec gnome-terminal -x python ~/.config/i3/loadsetup.py 3
-bindsym $mod+Control+4 exec gnome-terminal -x python ~/.config/i3/loadsetup.py 4
-bindsym $mod+Control+5 exec gnome-terminal -x python ~/.config/i3/loadsetup.py 5
-bindsym $mod+Control+6 exec gnome-terminal -x python ~/.config/i3/loadsetup.py 6
-bindsym $mod+Control+7 exec gnome-terminal -x python ~/.config/i3/loadsetup.py 7
-bindsym $mod+Control+8 exec gnome-terminal -x python ~/.config/i3/loadsetup.py 8
-bindsym $mod+Control+9 exec gnome-terminal -x python ~/.config/i3/loadsetup.py 9
-bindsym $mod+Control+0 exec gnome-terminal -x python ~/.config/i3/loadsetup.py 10
-bindsym $alt+Control+1 exec gnome-terminal -x python ~/.config/i3/loadsetup.py 11
-bindsym $alt+Control+2 exec gnome-terminal -x python ~/.config/i3/loadsetup.py 12
-bindsym $alt+Control+3 exec gnome-terminal -x python ~/.config/i3/loadsetup.py 13
-bindsym $alt+Control+4 exec gnome-terminal -x python ~/.config/i3/loadsetup.py 14
-bindsym $alt+Control+5 exec gnome-terminal -x python ~/.config/i3/loadsetup.py 15
-bindsym $alt+Control+6 exec gnome-terminal -x python ~/.config/i3/loadsetup.py 16
-bindsym $alt+Control+7 exec gnome-terminal -x python ~/.config/i3/loadsetup.py 17
-bindsym $alt+Control+8 exec gnome-terminal -x python ~/.config/i3/loadsetup.py 18
-bindsym $alt+Control+9 exec gnome-terminal -x python ~/.config/i3/loadsetup.py 19
-bindsym $alt+Control+0 exec gnome-terminal -x python ~/.config/i3/loadsetup.py 20
+bindsym $mod+Control+1 exec gnome-terminal --role="LOAD SETUP" -x python ~/.config/i3/loadsetup.py 1
+bindsym $mod+Control+2 exec gnome-terminal --role="LOAD SETUP" -x python ~/.config/i3/loadsetup.py 2
+bindsym $mod+Control+3 exec gnome-terminal --role="LOAD SETUP" -x python ~/.config/i3/loadsetup.py 3
+bindsym $mod+Control+4 exec gnome-terminal --role="LOAD SETUP" -x python ~/.config/i3/loadsetup.py 4
+bindsym $mod+Control+5 exec gnome-terminal --role="LOAD SETUP" -x python ~/.config/i3/loadsetup.py 5
+bindsym $mod+Control+6 exec gnome-terminal --role="LOAD SETUP" -x python ~/.config/i3/loadsetup.py 6
+bindsym $mod+Control+7 exec gnome-terminal --role="LOAD SETUP" -x python ~/.config/i3/loadsetup.py 7
+bindsym $mod+Control+8 exec gnome-terminal --role="LOAD SETUP" -x python ~/.config/i3/loadsetup.py 8
+bindsym $mod+Control+9 exec gnome-terminal --role="LOAD SETUP" -x python ~/.config/i3/loadsetup.py 9
+bindsym $mod+Control+0 exec gnome-terminal --role="LOAD SETUP" -x python ~/.config/i3/loadsetup.py 10
+bindsym $alt+Control+1 exec gnome-terminal --role="LOAD SETUP" -x python ~/.config/i3/loadsetup.py 11
+bindsym $alt+Control+2 exec gnome-terminal --role="LOAD SETUP" -x python ~/.config/i3/loadsetup.py 12
+bindsym $alt+Control+3 exec gnome-terminal --role="LOAD SETUP" -x python ~/.config/i3/loadsetup.py 13
+bindsym $alt+Control+4 exec gnome-terminal --role="LOAD SETUP" -x python ~/.config/i3/loadsetup.py 14
+bindsym $alt+Control+5 exec gnome-terminal --role="LOAD SETUP" -x python ~/.config/i3/loadsetup.py 15
+bindsym $alt+Control+6 exec gnome-terminal --role="LOAD SETUP" -x python ~/.config/i3/loadsetup.py 16
+bindsym $alt+Control+7 exec gnome-terminal --role="LOAD SETUP" -x python ~/.config/i3/loadsetup.py 17
+bindsym $alt+Control+8 exec gnome-terminal --role="LOAD SETUP" -x python ~/.config/i3/loadsetup.py 18
+bindsym $alt+Control+9 exec gnome-terminal --role="LOAD SETUP" -x python ~/.config/i3/loadsetup.py 19
+bindsym $alt+Control+0 exec gnome-terminal --role="LOAD SETUP" -x python ~/.config/i3/loadsetup.py 20
 
 
 # reload the configuration file
@@ -228,6 +228,11 @@ bindsym $mod+Shift+x exec i3lock --color=000030
 #bindsym XF86AudioRaiseVolume exec pactl set-sink-volume 0 +2%
 #bindsym XF86AudioLowerVolume exec pactl set-sink-volume 0 -2%
 bindsym XF86AudioMute exec pactl set-sink-mute 0 toggle
+
+#----------------------------
+# Rules to apply to windows
+#----------------------------
+for_window [window_role="LOAD SETUP"] floating enable
 
 #-------------------------------
 # Run these commands on startup
