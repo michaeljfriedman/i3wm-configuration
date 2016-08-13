@@ -19,7 +19,7 @@ font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 # clear in small sizes. However, if you need a lot of unicode glyphs or
 # right-to-left text rendering, you should instead use pango for rendering and
 # chose a FreeType font, such as:
-# font pango:DejaVu Sans Mono 10
+font pango:System San Francisco Display 11
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -209,10 +209,47 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
+#----------------
+# Window colors
+#----------------
+
+# Reference color 		Hex
+#
+# Radidance Aqua		#2dacd4
+# Ambiance Red 			#ce3a3a
+# Ambiance Title Bar 	#454545
+# Ambiance Title Text 	#dfdfdf
+# Arc Title Bar 		#2f343f
+# Arc Title Text 		#afb8c5
+# Arc Selected Blue 	#5294e2
+# Default indicator 	#2e9ef4
+
+# Current colors
+set $COLOR-BG-FOCUSED 		#454545
+set $COLOR-BG-UNFOCUSED 	#454545
+set $COLOR-BORDER-FOCUSED 	#454545
+set $COLOR-BORDER-UNFOCUSED #454545
+set $COLOR-TXT-FOCUSED 		#dfdfdf
+set $COLOR-TXT-UNFOCUSED 	$888888
+set $COLOR-INDICATOR		#ce3a3a
+
+# color class				border					background			text					indicator 			child_border
+client.focused 				$COLOR-BORDER-FOCUSED 	$COLOR-BG-FOCUSED 	$COLOR-TXT-FOCUSED 		$COLOR-INDICATOR 	$COLOR-BG-FOCUSED
+client.unfocused 			$COLOR-BORDER-UNFOCUSED $COLOR-BG-UNFOCUSED $COLOR-TXT-UNFOCUSED	$COLOR-INDICATOR 	$COLOR-BG-UNFOCUSED
+client.focused_inactive 	$COLOR-BORDER-UNFOCUSED $COLOR-BG-UNFOCUSED $COLOR-TXT-UNFOCUSED 	$COLOR-INDICATOR 	$COLOR-BG-UNFOCUSED
+
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
         status_command i3status
+        font pango:System San Francisco Display 11
+        colors {
+        	background 	$COLOR-BG-FOCUSED
+
+        	# color class 		border 					background 		 	text
+        	focused_workspace 	$COLOR-BORDER-FOCUSED 	$COLOR-BG-FOCUSED 	$COLOR-TXT-FOCUSED
+        	inactive_workspace 	$COLOR-BORDER-UNFOCUSED $COLOR-BG-UNFOCUSED	$COLOR-TXT-UNFOCUSED
+        }
 }
 
 
@@ -237,6 +274,8 @@ bindsym $mod+Shift+w exec python ~/.config/i3/resetworkspaces.py && i3-msg reloa
 #----------------------------
 for_window [window_role="LOAD SETUP"] floating enable
 for_window [class="Steam"] floating enable
+assign [class="chromium-browser" instance="crx_dkfhfaphfkopdgpbfkebjfcblcafcmpi"] $WORKSPACE13
+for_window [class="chromium-browser" instance="crx_dkfhfaphfkopdgpbfkebjfcblcafcmpi"] floating enable
 
 #-------------------------------
 # Run these commands on startup
