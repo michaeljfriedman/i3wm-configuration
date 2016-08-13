@@ -39,8 +39,8 @@ bindsym $mod+d exec dmenu_run
 
 # change focus
 bindsym $mod+j focus left
-bindsym $mod+k focus down
-bindsym $mod+l focus up
+bindsym $mod+k focus up
+bindsym $mod+l focus down
 bindsym $mod+semicolon focus right
 
 # alternatively, you can use the cursor keys:
@@ -51,8 +51,8 @@ bindsym $mod+Right focus right
 
 # move focused window
 bindsym $mod+Shift+j move left
-bindsym $mod+Shift+k move down
-bindsym $mod+Shift+l move up
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move down
 bindsym $mod+Shift+semicolon move right
 
 # alternatively, you can use the cursor keys:
