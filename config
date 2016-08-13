@@ -237,7 +237,6 @@ bindsym $mod+Shift+w exec python ~/.config/i3/resetworkspaces.py && i3-msg reloa
 #----------------------------
 for_window [window_role="LOAD SETUP"] floating enable
 for_window [class="Steam"] floating enable
-for_window [window_role="browser"] layout tabbed
 
 #-------------------------------
 # Run these commands on startup
