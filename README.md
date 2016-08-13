@@ -1,0 +1,1 @@
+This is my personal configuration of the i3 Window Manager.
