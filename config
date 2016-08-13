@@ -229,10 +229,14 @@ bindsym $mod+Shift+x exec i3lock --color=000030
 #bindsym XF86AudioLowerVolume exec pactl set-sink-volume 0 -2%
 bindsym XF86AudioMute exec pactl set-sink-mute 0 toggle
 
+# Reset workspaces to their default names
+bindsym $mod+Shift+w exec python ~/.config/i3/resetworkspaces.py && i3-msg reload && i3-nagbar -t warning -m "Reset all workspace names"
+
 #----------------------------
 # Rules to apply to windows
 #----------------------------
 for_window [window_role="LOAD SETUP"] floating enable
+for_window [class="Steam"] floating enable
 
 #-------------------------------
 # Run these commands on startup

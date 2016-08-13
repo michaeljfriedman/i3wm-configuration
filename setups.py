@@ -15,7 +15,7 @@ programs so they can load together on a common workspace.
 
 
 Description 2:
-The static function following the Setups class defines all the setups in lists.
+The create_setups() method of the Setups class defines all the setups in lists.
 (This is where the user specifies what to name the setup, and which
 programs/commands to run.)
 '''
@@ -50,14 +50,26 @@ class Setups(object):
 
 def create_setups():
 	names = [
-		"Sublime"
+		"Sublime",
+		"Android Dev",
+		"LaTeX",
+		"Composing",
+		"Spotify",
+		"Messaging",
+		"Games"
 	]
 
 	# To run i3 commands (for instance, to split horizontally/vertically), prefix
 	# the command with "i3-msg" followed by the i3 command
 	# 	e.g. To split horizontally: "i3-msg split h"
 	cmds = [
-		["subl -n", "gnome-terminal", "i3-msg split v", "gnome-terminal"]
+		["subl -n", "gnome-terminal", "i3-msg split v", "gnome-terminal"],
+		["/opt/android-studio/bin/studio.sh & disown"],
+		["texmaker"],
+		["musescore"],
+		["chromium-browser --app=https://play.spotify.com"],
+		["chromium-browser --app=https://www.mightytext.net/web8"],
+		["steam"]
 	]
 
 	return Setups(names, cmds)
