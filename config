@@ -217,6 +217,7 @@ bindsym $mod+r mode "resize"
 #
 # Radidance Aqua		#2dacd4
 # Ambiance Red 			#ce3a3a
+# Ambiance Blue Spring 	#6793db
 # Ambiance Title Bar 	#454545
 # Ambiance Title Text 	#dfdfdf
 # Arc Title Bar 		#2f343f
@@ -231,7 +232,7 @@ set $COLOR-BORDER-FOCUSED 	#454545
 set $COLOR-BORDER-UNFOCUSED #454545
 set $COLOR-TXT-FOCUSED 		#dfdfdf
 set $COLOR-TXT-UNFOCUSED 	$888888
-set $COLOR-INDICATOR		#ce3a3a
+set $COLOR-INDICATOR		#6793db
 
 # color class				border					background			text					indicator 			child_border
 client.focused 				$COLOR-BORDER-FOCUSED 	$COLOR-BG-FOCUSED 	$COLOR-TXT-FOCUSED 		$COLOR-INDICATOR 	$COLOR-BG-FOCUSED
