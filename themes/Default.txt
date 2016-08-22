@@ -1,0 +1,10 @@
+----------------------------------------
+ COPY THIS SECTION TO HEADER "Font"
+----------------------------------------
+
+
+----------------------------------------
+ COPY THIS SECTION TO HEADER "Theme"
+----------------------------------------
+# Theme colors
+# Default indicator 	#2e9ef4
