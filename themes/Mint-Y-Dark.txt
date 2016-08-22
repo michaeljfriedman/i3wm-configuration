@@ -1,0 +1,23 @@
+----------------------------------------
+ COPY THIS SECTION TO HEADER "Font"
+----------------------------------------
+set $FONT-FACE "Noto Sans"
+set $FONT-SIZE 12
+
+
+----------------------------------------
+ COPY THIS SECTION TO HEADER "Theme"
+----------------------------------------
+# Theme colors
+# Mint-Y-Dark Title Bar: 	#2f2f2f
+# Mint-Y-Dark Title Text: 	#dadada
+# Mint-Y-Dark Green:		#8fa876
+
+# Current colors
+set $COLOR-BG-FOCUSED 		#2f2f2f
+set $COLOR-BG-UNFOCUSED 	#2f2f2f
+set $COLOR-BORDER-FOCUSED 	#2f2f2f
+set $COLOR-BORDER-UNFOCUSED #2f2f2f
+set $COLOR-TXT-FOCUSED 		#dadada
+set $COLOR-TXT-UNFOCUSED 	$888888
+set $COLOR-INDICATOR		#8fa876

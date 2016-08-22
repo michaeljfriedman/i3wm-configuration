@@ -12,6 +12,12 @@
 set $mod Mod4
 set $alt Mod1
 
+#------------------------
+# Font
+#------------------------
+set $FONT-FACE "System San Francisco Display"
+set $FONT-SIZE 11
+
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below. ISO 10646 = Unicode
 font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
@@ -19,7 +25,7 @@ font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 # clear in small sizes. However, if you need a lot of unicode glyphs or
 # right-to-left text rendering, you should instead use pango for rendering and
 # chose a FreeType font, such as:
-font pango:System San Francisco Display 11
+font pango:$FONT-FACE $FONT-SIZE
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -210,20 +216,12 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 #----------------
-# Window colors
+# Theme
 #----------------
-
-# Reference color 		Hex
-#
-# Radidance Aqua		#2dacd4
-# Ambiance Red 			#ce3a3a
+# Theme colors
 # Ambiance Blue Spring 	#6793db
 # Ambiance Title Bar 	#454545
 # Ambiance Title Text 	#dfdfdf
-# Arc Title Bar 		#2f343f
-# Arc Title Text 		#afb8c5
-# Arc Selected Blue 	#5294e2
-# Default indicator 	#2e9ef4
 
 # Current colors
 set $COLOR-BG-FOCUSED 		#454545
@@ -243,7 +241,7 @@ client.focused_inactive 	$COLOR-BORDER-UNFOCUSED $COLOR-BG-UNFOCUSED $COLOR-TXT-
 # finds out, if available)
 bar {
         status_command i3status
-        font pango:System San Francisco Display 11
+        font pango:$FONT-FACE $FONT-SIZE
         colors {
         	background 	$COLOR-BG-FOCUSED
 
