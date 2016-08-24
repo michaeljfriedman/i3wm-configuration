@@ -33,7 +33,7 @@ def rename_workspace(w, new_name):
 	lines 								= []
 	found 								= False
 	for line in config:
-		if workspace_declaration in line:
+		if not found and workspace_declaration in line:
 			line = replacement + "\n"
 			found = True
 		lines.append(line)
