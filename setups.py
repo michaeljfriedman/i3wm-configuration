@@ -63,12 +63,12 @@ def create_setups():
 	# the command with "i3-msg" followed by the i3 command
 	# 	e.g. To split horizontally: "i3-msg split h"
 	cmds = [
-		["subl -n", "gnome-terminal", "i3-msg split v", "gnome-terminal"],
+		["subl -n", "xfce4-terminal", "i3-msg split v", "xfce4-terminal"],
 		["/opt/android-studio/bin/studio.sh & disown"],
 		["texmaker"],
 		["musescore"],
-		["chromium-browser --app=https://play.spotify.com"],
-		["chromium-browser --app=https://www.mightytext.net/web8"],
+		["google-chrome --app=https://play.spotify.com"],
+		["google-chrome --app=https://www.mightytext.net/web8"],
 		["steam"]
 	]
 
