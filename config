@@ -260,10 +260,14 @@ bar {
 bindsym $mod+Shift+s exec i3lock --color=000030 && sudo pm-suspend
 bindsym $mod+Shift+x exec i3lock --color=000030
 
-# Fix volume buttons
-#bindsym XF86AudioRaiseVolume exec pactl set-sink-volume 0 +2%
-#bindsym XF86AudioLowerVolume exec pactl set-sink-volume 0 -2%
-bindsym XF86AudioMute exec pactl set-sink-mute 0 toggle
+# Enable volume buttons
+bindsym XF86AudioRaiseVolume exec pactl set-sink-volume 1 +5%
+bindsym XF86AudioLowerVolume exec pactl set-sink-volume 1 -5%
+bindsym XF86AudioMute exec pactl set-sink-mute 1 toggle
+
+# Enable brightness buttons
+bindsym XF86MonBrightnessUp exec xbacklight -steps 10 -inc 10
+bindsym XF86MonBrightnessDown exec xbacklight -steps 10 -dec 10
 
 # Reset workspaces to their default names
 bindsym $mod+Shift+w exec python ~/.config/i3/resetworkspaces.py && i3-msg reload && i3-nagbar -t warning -m "Reset all workspace names"
