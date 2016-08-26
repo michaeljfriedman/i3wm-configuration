@@ -278,11 +278,14 @@ bindsym $mod+Shift+w exec python ~/.config/i3/resetworkspaces.py && i3-msg reloa
 #----------------------------
 # Rules to apply to windows
 #----------------------------
-set $INSTANCE_MIGHT_TEXT_REPLY crx_dkfhfaphfkopdgpbfkebjfcblcafcmpi
+set $INSTANCE_MIGHTYTEXT_REPLY "crx_dkfhfaphfkopdgpbfkebjfcblcafcmpi"
+set $WIDTH_MIGHTYTEXT_REPLY 635
+set $HEIGHT_MIGHTYTEXT_REPLY 700
 for_window [window_role=$ROLE_LOAD_SETUP] floating enable
 for_window [class="Steam"] floating enable
-assign [class="google-chrome" instance=$INSTANCE_MIGHTY_TEXT_REPLY] $WORKSPACE13
-for_window [class="google-chrome" instance=$INSTANCE_MIGHTY_TEXT_REPLY] floating enable
+assign [class="google-chrome" instance=$INSTANCE_MIGHTYTEXT_REPLY] $WORKSPACE13
+for_window [class="google-chrome" instance=$INSTANCE_MIGHTYTEXT_REPLY] floating enable
+for_window [class="google-chrome" instance=$INSTANCE_MIGHTYTEXT_REPLY] resize set $WIDTH_MIGHTYTEXT_REPLY $HEIGHT_MIGHTYTEXT_REPLY
 
 #-------------------------------
 # Run these commands on startup
