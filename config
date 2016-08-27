@@ -198,19 +198,19 @@ mode "resize" {
 
         set $RESIZE_AMT 5
 
-        # Pressing left will shrink the window’s width.
-        # Pressing right will grow the window’s width.
-        # Pressing up will shrink the window’s height.
-        # Pressing down will grow the window’s height.
+        # Pressing LEFT or j will SHRINK the window’s width.
+        # Pressing RIGHT or ; will GROW the window’s width.
+        # Pressing DOWN or l will SHRINK the window’s height.
+        # Pressing UP or k will GROW the window’s height.
         bindsym j resize shrink width $RESIZE_AMT px or $RESIZE_AMT ppt
         bindsym k resize grow height $RESIZE_AMT px or $RESIZE_AMT ppt
         bindsym l resize shrink height $RESIZE_AMT px or $RESIZE_AMT ppt
         bindsym semicolon resize grow width $RESIZE_AMT px or $RESIZE_AMT ppt
 
-        # same bindings, but for the arrow keys
+        # same bindings for the arrow keys
         bindsym Left resize shrink width $RESIZE_AMT px or $RESIZE_AMT ppt
-        bindsym Down resize grow height $RESIZE_AMT px or $RESIZE_AMT ppt
-        bindsym Up resize shrink height $RESIZE_AMT px or $RESIZE_AMT ppt
+        bindsym Up resize grow height $RESIZE_AMT px or $RESIZE_AMT ppt
+        bindsym Down resize shrink height $RESIZE_AMT px or $RESIZE_AMT ppt
         bindsym Right resize grow width $RESIZE_AMT px or $RESIZE_AMT ppt
 
         # back to normal: Enter or Escape
