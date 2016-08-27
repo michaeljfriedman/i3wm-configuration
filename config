@@ -296,7 +296,9 @@ for_window [class="google-chrome" instance=$INSTANCE_MIGHTYTEXT_REPLY] resize se
 # Use "exec" to run only on login
 # Use "exec_always" to run on restarting i3
 
-# Background processes
-exec dropbox start
-exec redshift-gtk -c .config/redshift.conf
+# Processes to run are stored in scripts-on-start-x-session.sh. Anything that
+# applies to any x session should go in that file
+exec ~/scripts-on-start-x-session.sh
+
+# Anything that applies specifically to i3 should be started here
 exec_always feh --bg-scale http://images6.fanpop.com/image/photos/36800000/Beautiful-Landscapes-image-beautiful-landscapes-36803145-1920-1080.jpg
