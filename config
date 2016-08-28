@@ -262,8 +262,10 @@ bar {
 #----------------------
 
 # Screen lock and suspend
-bindsym $mod+Shift+s exec i3lock --color=000030 && sudo pm-suspend
-bindsym $mod+Shift+x exec i3lock --color=000030
+set $CMD_LOCK gnome-screensaver-command --lock
+set $CMD_SUSPEND sudo pm-suspend
+bindsym $mod+Shift+s exec $CMD_LOCK && $CMD_SUSPEND
+bindsym $mod+Shift+x exec $CMD_LOCK
 
 # Enable volume buttons
 bindsym XF86AudioRaiseVolume exec pactl set-sink-volume 1 +5%

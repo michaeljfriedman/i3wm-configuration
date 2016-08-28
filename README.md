@@ -1,11 +1,9 @@
 This is my personal configuration of the i3 Window Manager.
 
-Dependencies for i3:
+Dependencies for i3 config:
 - xfce4-terminal
+- gnome-screensaver
 - python
-- redshift
-- redshift-gtk
-- dropbox
 - feh
 - pactl
 - xbacklight
@@ -17,3 +15,6 @@ Dependencies for setups:
 - steam
 - musescore
 - Android Studio
+
+Notes:
+- config requires that ~/scripts-on-start-x-session.sh exists. This serves as a startup script to start any applications that should start with any X session. (i3-specific startup scripts are written at the end of the config.)
