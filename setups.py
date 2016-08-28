@@ -50,6 +50,7 @@ class Setups(object):
 
 def create_setups():
 	names = [
+		"Empty",				# Use this to make an empty workspace with a custom name
 		"Sublime",
 		"Android Dev",
 		"LaTeX",
@@ -63,6 +64,7 @@ def create_setups():
 	# the command with "i3-msg" followed by the i3 command
 	# 	e.g. To split horizontally: "i3-msg split h"
 	cmds = [
+		[],
 		["subl -n", "xfce4-terminal", "i3-msg split v", "xfce4-terminal"],
 		["/opt/android-studio/bin/studio.sh & disown"],
 		["texmaker"],
