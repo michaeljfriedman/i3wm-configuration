@@ -15,8 +15,8 @@ set $alt Mod1
 #------------------------
 # Font
 #------------------------
-set $FONT-FACE "System San Francisco Display"
-set $FONT-SIZE 11
+set $FONT-FACE "Noto Sans"
+set $FONT-SIZE 12
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below. ISO 10646 = Unicode
@@ -100,8 +100,8 @@ set $WORKSPACE2 "2: Psets"
 set $WORKSPACE3 "3: Study"
 set $WORKSPACE4 "4: Writing"
 set $WORKSPACE5 "5: Exams"
-set $WORKSPACE6 "6: Sublime"
-set $WORKSPACE7 "7: Android Dev"
+set $WORKSPACE6 "6: Monopoly"
+set $WORKSPACE7 "7: HTML/JS"
 set $WORKSPACE8 "8: LaTeX"
 set $WORKSPACE9 "9: Music Prod"
 set $WORKSPACE10 "10: Piano"
@@ -224,18 +224,18 @@ bindsym $mod+r mode "resize"
 # Theme
 #----------------
 # Theme colors
-# Ambiance Blue Spring 		#6793db
-# Ambiance Title Bar 		#454545
-# Ambiance Title Text 		#dfdfdf
+# Mint-Y-Dark Title Bar: 	#2f2f2f
+# Mint-Y-Dark Title Text: 	#dadada
+# Mint-Y-Dark Green:		#8fa876
 
 # Current colors
-set $COLOR-BG-FOCUSED 		#454545
-set $COLOR-BG-UNFOCUSED 	#454545
-set $COLOR-BORDER-FOCUSED 	#454545
-set $COLOR-BORDER-UNFOCUSED #454545
-set $COLOR-TXT-FOCUSED 		#dfdfdf
+set $COLOR-BG-FOCUSED 		#2f2f2f
+set $COLOR-BG-UNFOCUSED 	#2f2f2f
+set $COLOR-BORDER-FOCUSED 	#2f2f2f
+set $COLOR-BORDER-UNFOCUSED #2f2f2f
+set $COLOR-TXT-FOCUSED 		#dadada
 set $COLOR-TXT-UNFOCUSED 	$888888
-set $COLOR-INDICATOR		#6793db
+set $COLOR-INDICATOR		#8fa876
 
 # color class				border					background			text					indicator 			child_border
 client.focused 				$COLOR-BORDER-FOCUSED 	$COLOR-BG-FOCUSED 	$COLOR-TXT-FOCUSED 		$COLOR-INDICATOR 	$COLOR-BG-FOCUSED
@@ -273,8 +273,8 @@ bindsym XF86AudioLowerVolume exec pactl set-sink-volume 1 -5%
 bindsym XF86AudioMute exec pactl set-sink-mute 1 toggle
 
 # Enable brightness buttons
-bindsym XF86MonBrightnessUp exec xbacklight -steps 10 -inc 10
-bindsym XF86MonBrightnessDown exec xbacklight -steps 10 -dec 10
+bindsym XF86MonBrightnessUp exec xbacklight -steps 5 -inc 5
+bindsym XF86MonBrightnessDown exec xbacklight -steps 5 -dec 5
 
 # Reset workspaces to their default names
 bindsym $mod+Shift+w exec python ~/.config/i3/resetworkspaces.py && i3-msg reload && i3-nagbar -t warning -m "Reset all workspace names"
