@@ -1,0 +1,22 @@
+----------------------------------------
+ COPY THIS SECTION TO HEADER "Font"
+----------------------------------------
+set $FONT-FACE "System San Francisco Display"
+set $FONT-SIZE 11
+
+----------------------------------------
+ COPY THIS SECTION TO HEADER "Theme"
+----------------------------------------
+# Theme colors
+# Ambiance Green 			#679816
+# Ambiance Title Bar 		#454545
+# Ambiance Title Text 		#dfdfdf
+
+# Current colors
+set $COLOR-BG-FOCUSED 		#454545
+set $COLOR-BG-UNFOCUSED 	#454545
+set $COLOR-BORDER-FOCUSED 	#454545
+set $COLOR-BORDER-UNFOCUSED #454545
+set $COLOR-TXT-FOCUSED 		#dfdfdf
+set $COLOR-TXT-UNFOCUSED 	$888888
+set $COLOR-INDICATOR		#679816
