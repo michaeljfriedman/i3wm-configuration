@@ -2,12 +2,16 @@ This is my personal configuration of the i3 Window Manager.
 
 Dependencies for i3 config:
 - xfce4-terminal
-- gnome-screensaver
 - python
 - feh
 - pactl
 - xbacklight
 - i3blocks
+
+Dependencies for lock screen:
+- i3lock
+- imagemagick
+- scrot
 
 Dependencies for setups:
 - google-chrome
