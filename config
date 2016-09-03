@@ -190,7 +190,8 @@ bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'python ~/.config/i3/resetworkspaces.py && i3-msg exit'"
+set $CMD_RESET_WORKSPACES ~/.config/i3/resetworkspaces.py
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'python $CMD_RESET_WORKSPACES && i3-msg exit'"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -278,7 +279,7 @@ bindsym XF86MonBrightnessUp exec xbacklight -steps 5 -inc 5
 bindsym XF86MonBrightnessDown exec xbacklight -steps 5 -dec 5
 
 # Reset workspaces to their default names
-bindsym $mod+Shift+w exec python ~/.config/i3/resetworkspaces.py && i3-msg reload && i3-nagbar -t warning -m "Reset all workspace names"
+bindsym $mod+Shift+w exec python $CMD_RESET_WORKSPACES && i3-msg reload && i3-nagbar -t warning -m "Reset all workspace names"
 
 #----------------------------
 # Rules to apply to windows

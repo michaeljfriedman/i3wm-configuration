@@ -15,7 +15,7 @@ current_workspace = 1
 for line in config:
 	if I3.workspace_declaration(current_workspace) in line:
 		line = "%s \"%s\"\n" % (I3.workspace_declaration(current_workspace),
-														I3.DEFAULT_WORKSPACE_NAMES[current_workspace - 1])
+														I3.WORKSPACE_NAMES_DEFAULT[current_workspace - 1])
 		current_workspace += 1
 	lines.append(line)
 config.close()

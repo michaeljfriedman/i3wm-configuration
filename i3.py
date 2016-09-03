@@ -6,48 +6,19 @@ Description:
 This is a static class that holds constants and functions related to i3. Replaces and improves the i3cmd module
 '''
 from subprocess32 import call
+import workspacenames
 
 
 class I3(object):
+
+	# ----Set this to one of the lists you defined in workspacenames.py----
+	WORKSPACE_NAMES_DEFAULT = workspacenames.workspace_names_desktop
 
 	# Constants
 	I3_DIRECTORY 						= "/home/michael/.config/i3/"
 	CONFIG_FILENAME 				= "config"
 	CONFIG_FILE 						= I3_DIRECTORY + CONFIG_FILENAME
 	CONFIG_FILE_BACKUP 			= CONFIG_FILE + ".on-startup"
-	DEFAULT_WORKSPACE_NAMES = [
-		# Home
-		"1: Home",						# Browsing, music, recreation
-		
-		# School
-		"2: Psets",						# Psets
-		"3: Study",						# Reviewing notes/readings
-		"4: Writing",					# Papers/written work
-		"5: Exams",						# Practice exams
-		
-		# Code
-		"6: Sublime",					# Projects using ST editor
-		"7: Android Dev",			# Developing Android apps
-		"8: LaTeX",						# LaTeX docs
-
-		# Music
-		"9: Music Prod",			# Recording & editing music
-		"10: Piano",					# Reading music, practicing w/ videos
-		"11: Composing",			# Composing/arranging music
-		"12: Music Player",		# Any music playing
-
-		# Misc.
-		"13: Messaging",			# Any messaging services
-		"14: Games",					# Gaming
-
-		# Un-purposed
-		"15",
-		"16",
-		"17",
-		"18",
-		"19",
-		"20"
-	]
 
 	# Returns the workspace declaration line for workspace i
 	@staticmethod
