@@ -61,16 +61,20 @@ setups = s.create_setups()
 prompt_select_setup_msg = "Select a setup from the following options:\n"
 for i in range(0, len(setups.names())):
 	prompt_select_setup_msg += str(i+1) + ": " + setups.names()[i] + "\n"
+prompt_select_setup_msg += "(or enter -1 to exit)\n"
 print prompt_select_setup_msg
 selection = 0
 num_attempts = 1
 MAX_ATTEMPTS = 5
+EXIT = -1
 while selection not in range(1, len(setups.names()) + 1):
 	if num_attempts > MAX_ATTEMPTS:
 		I3.nagbar("Maxed out your " + str(MAX_ATTEMPTS) + " attempts")
 		exit()
 	try:
 		selection = int(stdin.readline())
+		if selection == EXIT:
+			exit()
 	except ValueError:
 		pass
 	num_attempts += 1
