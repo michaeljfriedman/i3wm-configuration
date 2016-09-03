@@ -7,6 +7,7 @@ Dependencies for i3 config:
 - feh
 - pactl
 - xbacklight
+- i3blocks
 
 Dependencies for setups:
 - google-chrome
