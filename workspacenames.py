@@ -49,7 +49,7 @@ workspace_names_laptop = [
 	"2: Messaging",			# Text, Facebook message, etc.
 
 	# Extra workspaces for school or other purposes
-	"3",
+	"3: Class",
 	"4",
 	"5",
 
